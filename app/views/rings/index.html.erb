@@ -1,0 +1,21 @@
+<h1>Rings</h1>
+ 
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+<% @rings.each do |ring| %>
+  <tr>
+    <td><%= ring.name %></td>
+    <td><%= link_to 'View', ring %></td>
+    <td><%= link_to 'Update', edit_ring_path(ring) %></td>
+    <td><%= link_to 'Remove', ring, :confirm => 'Are you sure?',
+                                 	:method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+ 
+<br />
+<br />
+ 
+<%= link_to 'Create Ring', new_ring_path %>
