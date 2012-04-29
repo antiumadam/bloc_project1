@@ -3,8 +3,7 @@ class RingsController < ApplicationController
     @rings = Ring.all
 
       respond_to do |format|
-        format.html #index.html.erb
-        format.json {render :json => @rings}
+        format.html
       end
   end
 
@@ -16,8 +15,7 @@ class RingsController < ApplicationController
     @ring = Ring.find(params[:id])
 
       respond_to do |format|
-        format.html  # show.html.erb
-        format.json  { render :json => @ring }
+        format.html
       end
   end
 
@@ -28,12 +26,8 @@ class RingsController < ApplicationController
         if @ring.save
           format.html  { redirect_to(@ring,
                         :notice => 'Ring created!') }
-          format.json  { render :json => @ring,
-                        :status => :created, :location => @ring }
         else
           format.html  { render :action => "new" }
-          format.json  { render :json => @ring.errors,
-                        :status => :unprocessable_entity }
         end
       end
   end
@@ -49,11 +43,8 @@ class RingsController < ApplicationController
         if @ring.update_attributes(params[:ring])
           format.html  { redirect_to(@ring,
                         :notice => 'Ring name successfully changed.') }
-          format.json  { head :no_content }
         else
           format.html  { render :action => "edit" }
-          format.json  { render :json => @ring.errors,
-                        :status => :unprocessable_entity }
         end
       end
   end
@@ -64,7 +55,6 @@ class RingsController < ApplicationController
 
      respond_to do |format|
        format.html { redirect_to rings_url }
-       format.json { head :no_content }
      end
   end
 end
