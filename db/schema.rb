@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120425042658) do
+ActiveRecord::Schema.define(:version => 20120502033614) do
+
+  create_table "posts", :force => true do |t|
+    t.text     "content"
+    t.integer  "ring_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "posts", ["ring_id"], :name => "index_posts_on_ring_id"
 
   create_table "rings", :force => true do |t|
     t.string   "name"

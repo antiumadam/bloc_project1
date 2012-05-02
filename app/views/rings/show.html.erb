@@ -1,10 +1,27 @@
+<%= link_to 'Ringtack', rings_path %>
+
 <p id="notice"><%= notice %></p>
  
-<p>
-  <b>Name:</b>
+<h1>
+  <b>Ring:</b>
   <%= @ring.name %>
-</p>
+</h1>
  
+<h3>Posts</h3>
+
+<% @ring.posts.each do |post| %>
+  <p>
+	<b><%= post.content %></b>
+  </p>
+<% end %>
+
+<%= form_for([@ring, @ring.posts.build]) do |f| %>
+  <div class="field">
+    <%= f.text_area :content %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Post" %>
+  </div>
+<% end %>
  
-<%= link_to 'Change Name', edit_ring_path(@ring) %> |
-<%= link_to 'Main', rings_path %>
+
