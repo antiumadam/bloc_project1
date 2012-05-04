@@ -1,4 +1,7 @@
 class RingsController < ApplicationController
+  
+  before_filter :authenticate_user!
+  
   def index
     @rings = Ring.all
 
