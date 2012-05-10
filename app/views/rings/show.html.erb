@@ -13,6 +13,9 @@
   <p>
 	<b><%= post.content %></b>
   </p>
+  <p>
+    Posted by: <b><%= post.user.name %></b>
+  </p>
 <% end %>
 
 <%= form_for([@ring, @ring.posts.build]) do |f| %>

@@ -15,6 +15,13 @@
 	<%= f.label :name %><br />
 	<%= f.text_field :name %>
   </div>
+  <div class="field">
+	<%= f.fields_for :categories do |builder| %>
+	  <%= builder.label :name, "Category" %><br />
+	  <%= builder.text_field :name %>
+	<% end %>
+  </div>
+	
   <div class="actions">
 	<%= f.submit %>
   </div>
