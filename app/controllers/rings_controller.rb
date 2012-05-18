@@ -14,24 +14,17 @@ class RingsController < ApplicationController
   end
 
   def show
-    @ring = Ring.find(params[:id])
-
-      respond_to do |format|
-        format.html
-      end
+      @ring = Ring.find(params[:id])
   end
 
   def create
     @ring = Ring.new(params[:ring])
 
-      respond_to do |format|
-        if @ring.save
-          format.html  { redirect_to(@ring,
-                        :notice => 'Ring created!') }
-        else
-          format.html  { render :action => "new" }
-        end
-      end
+    if @ring.save
+      redirect_to(@ring, :notice => 'Ring created!')
+    else
+      render :action => "new"
+    end
   end
 
   def edit

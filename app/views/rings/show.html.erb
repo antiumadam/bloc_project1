@@ -6,7 +6,7 @@
   <b>Ring:</b>
   <%= @ring.name %>
 </h1>
- 
+ <h2>Category: <%= @ring.categories.first.name %></h2>
 <h3>Posts</h3>
 
 <% @ring.posts.each do |post| %>
