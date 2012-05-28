@@ -1,25 +1,22 @@
-<%= link_to 'Ringtack', rings_path %>
-
 <p id="notice"><%= notice %></p>
  
 <h1>
-  <b>Ring:</b>
-  <%= @ring.name %>
+  <b>Ring: <%= @ring.name %></b>
 </h1>
  <h2>Category: <%= @ring.categories.first.name %></h2>
 <h3>Posts</h3>
 
 <% @ring.posts.each do |post| %>
-  <p>
+  <div class ="well">
 	<b><%= post.content %></b>
-  </p>
-  <p>
+  <h5><br />
     Posted by: <b><%= post.user.name %></b>
-  </p>
+  </h5>
+  </div>
 <% end %>
 
 <%= form_for([@ring, @ring.posts.build]) do |f| %>
-  <div class="field">
+  <div class="textarea">
     <%= f.text_area :content %>
   </div>
   <div class="actions">

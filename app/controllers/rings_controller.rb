@@ -3,10 +3,6 @@ class RingsController < ApplicationController
   
   def index
     @rings = Ring.all
-
-      respond_to do |format|
-        format.html
-      end
   end
 
   def new
@@ -14,7 +10,7 @@ class RingsController < ApplicationController
   end
 
   def show
-      @ring = Ring.find(params[:id])
+    @ring = Ring.find(params[:id])
   end
 
   def create
@@ -28,25 +24,23 @@ class RingsController < ApplicationController
   end
 
   def edit
-    @ring = Ring.find(params[:id])
+    authorize! :edit, @ring, :notice => 'You are not authorized to perform this action'
+    @ring = Ring.find(params[:id])  
   end
 
   def update
     @ring = Ring.find(params[:id])
 
-      respond_to do |format|
-        if @ring.update_attributes(params[:ring])
-          format.html  { redirect_to(@ring,
-                        :notice => 'Ring name successfully changed.') }
-        else
-          format.html  { render :action => "edit" }
-        end
-      end
+    if @ring.update_attributes(params[:ring])
+      redirect_to @ring, :notice => 'Ring updated successfully.'
+    else
+      render "edit" 
+    end
   end
 
   def destroy
     @ring = Ring.find(params[:id])
-     @ring.destroy
+    @ring.destroy
 
      respond_to do |format|
        format.html { redirect_to rings_url }
