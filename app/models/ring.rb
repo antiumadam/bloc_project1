@@ -1,5 +1,5 @@
 class Ring < ActiveRecord::Base
-  attr_accessible :name, :categorizations_attributes, :categories
+  attr_accessible :name, :categorizations_attributes, :categories, :latitude, :longitude
   has_many :posts
   has_many :categorizations
   has_many :categories, :through => :categorizations

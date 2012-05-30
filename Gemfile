@@ -6,7 +6,8 @@ gem 'devise'
 gem 'cancan'
 gem 'bootstrap-sass'
 gem 'rolify'
-
+gem 'geocoder'
+gem 'jquery-rails'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -14,4 +15,4 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
+
