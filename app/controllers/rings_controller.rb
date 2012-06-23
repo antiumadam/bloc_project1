@@ -2,7 +2,8 @@ class RingsController < ApplicationController
   before_filter :authenticate_user!
   
   def index
-    @rings = Ring.all
+    @rings = Ring.inside(42.6782361, -83.3765481)
+    @allrings = Ring.all
   end
 
   def new

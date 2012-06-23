@@ -6,9 +6,8 @@ gem 'devise'
 gem 'cancan'
 gem 'bootstrap-sass'
 gem 'rolify'
-gem 'geocoder'
 gem 'jquery-rails'
-
+gem 'geocoder'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'

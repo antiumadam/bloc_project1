@@ -11,16 +11,41 @@
 <% @rings.each do |ring| %>
   <tr>
     <td><%= link_to ring.name, ring %></td>
+	<td><%= ring.latitude %></td>
+	<td><%= ring.longitude %></td>
     <% if can? :update, @ring %>
 	<td><%= link_to "Edit", edit_ring_path(ring) %>
 	<td><%= link_to "Destroy", @ring, :method => :delete, :confirm => "Are you sure?" %>
-	<% end %>	
-    
+	<% end %>   
   </tr>
 <% end %>
 </table>
- 
 <br />
+<table>
+<% @allrings.each do |ring| %>
+  <tr>
+    <td><%= link_to ring.name, ring %></td>
+	<td><%= ring.latitude %></td>
+	<td><%= ring.longitude %></td>
+    <% if can? :update, @ring %>
+	<td><%= link_to "Edit", edit_ring_path(ring) %>
+	<td><%= link_to "Destroy", @ring, :method => :delete, :confirm => "Are you sure?" %>
+	<% end %>	    
+  </tr>
+<% end %>
+</table>
 <br />
  
 <%= link_to 'Create a Ring', new_ring_path %>
+
+<br />
+
+
+
+
+
+
+
+
+
+

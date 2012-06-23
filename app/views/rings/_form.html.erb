@@ -14,10 +14,6 @@
   <div class="field">
 	<%= f.label :name %><br />
 	<%= f.text_field :name %>
-	<%= f.label :latitude %>
-	<%= f.text_field :latitude, :disabled => true%>
-	<%= f.label :longitude %>
-	<%= f.text_field :longitude, :disabled => true%>
   </div>
   <div class="field">
 	<%= f.fields_for :categories do |builder| %>
@@ -25,7 +21,16 @@
 	  <%= builder.text_field :name %>
 	<% end %>
   </div>
-	
+  <div class="field">
+	<%= f.label :size %><br />
+	<%= f.text_field :size %>
+  </div>  
+  <div class="field">
+  	<%= f.label :latitude %>
+	<%= f.text_field :latitude%>
+	<%= f.label :longitude %>
+	<%= f.text_field :longitude%>
+  </div>
   <div class="actions">
 	<%= f.submit %>
   </div>
