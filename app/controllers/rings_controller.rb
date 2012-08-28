@@ -2,8 +2,8 @@ class RingsController < ApplicationController
   before_filter :authenticate_user!
   
   def index
-    @rings = Ring.inside(42.6782361, -83.3765481)
-    @allrings = Ring.all
+    @rings = Ring.all
+    @inrings = Ring.find(session[:ring_session].split(","))
   end
 
   def new

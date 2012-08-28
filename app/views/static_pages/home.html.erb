@@ -1,10 +1,20 @@
+<% content_for :javascripts do %>
+   <%= javascript_include_tag "geolocation" %>
+<% end %>
+
 <div class="center hero-unit">
   <h1>Welcome to Ringtack</h1>
 
   <h2>
-    Find other people near you who share your interests, and make real world communities better.
+    Make real world communities better.
   </h2>
 
+
   <%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-large btn-primary" %>
+
+
+  <%= render 'ringsessionform' %>
 </div>
+
+
 

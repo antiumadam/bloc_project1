@@ -8,7 +8,7 @@
   <tr>
     <th>Name</th>
   </tr>
-<% @rings.each do |ring| %>
+<% @inrings.each do |ring| %>
   <tr>
     <td><%= link_to ring.name, ring %></td>
 	<td><%= ring.latitude %></td>
@@ -21,19 +21,7 @@
 <% end %>
 </table>
 <br />
-<table>
-<% @allrings.each do |ring| %>
-  <tr>
-    <td><%= link_to ring.name, ring %></td>
-	<td><%= ring.latitude %></td>
-	<td><%= ring.longitude %></td>
-    <% if can? :update, @ring %>
-	<td><%= link_to "Edit", edit_ring_path(ring) %>
-	<td><%= link_to "Destroy", @ring, :method => :delete, :confirm => "Are you sure?" %>
-	<% end %>	    
-  </tr>
-<% end %>
-</table>
+
 <br />
  
 <%= link_to 'Create a Ring', new_ring_path %>

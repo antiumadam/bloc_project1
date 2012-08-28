@@ -1,0 +1,2 @@
+module RingSessionsHelper
+end

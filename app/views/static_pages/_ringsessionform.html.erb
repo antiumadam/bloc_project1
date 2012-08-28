@@ -1,0 +1,14 @@
+<%= form_tag ring_sessions_path do %>
+
+<div class="field">
+	<%= label_tag :latitude %>
+	<%= text_field_tag :latitude %>
+	<%= label_tag :longitude %>
+	<%= text_field_tag :longitude %>
+</div>
+
+<div class="actions">
+	<%= submit_tag 'Ring Check' %>
+</div>
+
+<% end %>

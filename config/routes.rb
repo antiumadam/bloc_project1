@@ -12,7 +12,7 @@ Ringtack::Application.routes.draw do
     resources :posts
   end
   
-  
-  
+  resources :ring_sessions, only: [:create]
+  match 'static_pages#home', to: 'ring_sessions#new'
   
 end
