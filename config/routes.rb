@@ -13,6 +13,6 @@ Ringtack::Application.routes.draw do
   end
   
   resources :ring_sessions, only: [:create]
-  match 'static_pages#home', to: 'ring_sessions#new'
+  match 'static_pages#home', to: 'ring_sessions#create'
   
 end
