@@ -44,7 +44,7 @@ test:
   database: ringtack_test
   pool: 5
   username: ringtack
-  password:
+  password: ringtack
 
 production:
   adapter: postgresql
@@ -52,4 +52,4 @@ production:
   database: ringtack_production
   pool: 5
   username: ringtack
-  password:
+  password: ringtack
