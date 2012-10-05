@@ -13,6 +13,7 @@
     <td><%= link_to ring.name, ring %></td>
 	<td><%= ring.latitude %></td>
 	<td><%= ring.longitude %></td>
+	<td><%= image_tag	"http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{ring.latitude}%2C#{ring.longitude}"%></td>
     <% if can? :update, @ring %>
 	<td><%= link_to "Edit", edit_ring_path(ring) %>
 	<td><%= link_to "Destroy", @ring, :method => :delete, :confirm => "Are you sure?" %>

@@ -3,9 +3,10 @@
 <h1>
   <b>Ring: <%= @ring.name %></b>
 </h1>
- <h2>Size: <%= @ring.size %></h2>
+ <h2>Size: <%= @ring.size %> miles</h2>
  <h2>Category: <%= @ring.categories.first.name %></h2>
-<h3>Posts</h3>
+  <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@ring.latitude}%2C#{@ring.longitude}"%>
+ <h3>Posts</h3>
 
 <% @ring.posts.each do |post| %>
   <div class ="well">
